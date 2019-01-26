@@ -31,5 +31,9 @@ class Moof {
     System.out.println("Method with Moof param called");
     return (o instanceof Moof) && (((Moof)o).getMoofValue() == this.moofValue);
   }
+
+  public int hashCode() {
+    return 1;
+  }
 }
 
