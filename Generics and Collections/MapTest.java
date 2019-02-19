@@ -46,6 +46,13 @@ class MapTest {
     System.out.println(m.get(c1));
     System.out.println(m.get(c2));
     System.out.println(m.size());
+
+    d1.name = "magnolia";
+    System.out.println(m.get(d1));
+    d1.name = "clover";
+    System.out.println(m.get(new Dog("clover")));
+    d1.name = "arthur";
+    System.out.println(m.get(new Dog("clover")));
   }
 }
 
