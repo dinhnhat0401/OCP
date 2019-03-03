@@ -17,13 +17,13 @@ class AccountDanger implements Runnable {
     }
   }
 
-  private void makeWithdrawal(int amt) {
+  private synchronized void makeWithdrawal(int amt) {
     if (acct.getBalance() < amt) {
       System.out.println("Not enough in account for " + Thread.currentThread().getName() + " to withdraw " + acct.getBalance());
     } else {
       System.out.println(Thread.currentThread().getName() + " is going to withdraw");
       try {
-        Thread.sleep(1000);
+        Thread.sleep(500);
       } catch (InterruptedException ex) {
       }
     
