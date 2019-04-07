@@ -11,6 +11,16 @@ class q1 {
     while(it.hasNext()) {
       System.out.println(it.next() + " ");
     }
+
+    ArrayList<Integer> arr1List = new ArrayList<>();
+    arr1List.add(5);
+    arr1List.add(67);
+    arr1List.add(8);
+    Iterator<Integer> it2 = arr1List.iterator();
+    arr1List.add(6);
+    while(it2.hasNext()) {
+      System.out.print(it2.next() + " ");
+    }
   }
 }
 
