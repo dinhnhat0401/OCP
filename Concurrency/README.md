@@ -35,6 +35,28 @@ one for read-only operations and one for writing.
 The read lock may be held simultaneously by multiple reader threads,
 so long as there are no writers. The write lock is exclusive
 
+## Executor @ java.util.concurrent
+
+### What
+
+* An object that excutes submitted Runnable tasks
+
+### When
+
+* An Executor is normally used instead of explicitly creating threads
+
+### Why
+
+### How
+
+* For example, rather than invoking new Thread(new(RunnableTask())).start() for each of a set of tasks, you might use:
+
+```
+Executor executor = anExecutor;
+executor.execute(new RunnableTask1());
+executor.execute(new RunnableTask2());
+```
+
 ## Executors
 
 Factory and utility methods for Executor, ExecutorService, ScheduledExecutorService, ThreadFactory, and Callable classes defined in this package. This class supports the following kinds of methods:
@@ -48,4 +70,52 @@ Factory and utility methods for Executor, ExecutorService, ScheduledExecutorServ
 + Methods that create and return a ThreadFactory that sets newly created threads to a known state.
 
 + Methods that create and return a Callable out of other closure-like forms, so they can be used in execution methods requiring Callable.
+
+## ExecutorService @ java.util.concurrent
+
+### What
+
+An Executor that provides methods to manage termination and methods that can produce a Future for tracking progress of one or more asynchoronous tasks.
+
+### When
+
+Same with Executor
+
+### Why
+
+### How
+
+A sketch of a network service in which threads in a thread pool service incoming requests.
+
+```
+class NetworkService implements Runnable {
+  private final ServerSocket serverSocket;
+  private final ExecutorService pool;
+
+  public NetworkService(int port, int poolSize) throws IOException {
+    serverSocket = new ServerSocket(port);
+    pool = Executors.newFixedThreadPool(poolSize);
+  }
+
+  public void run() {
+    try {
+      for (;;) {
+        pool.execute(new Handler(serverSocket.accept()));  
+      }
+    } catch (IOException e) {
+      pool.shutdown();
+    }
+  }
+}
+
+class Handler implements Runnable {
+  private final Socket socket;
+  Handler(Socket socket) {
+    this.socket = socket;
+  }
+
+  public void run() {
+  }
+}
+```
 
