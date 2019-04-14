@@ -26,3 +26,12 @@ Attempts to take an element from an empty queue will similarly block.
 
 A synchronization aid that allows a set of threads to all wait for each other to reach a common barrier point
 
+## ReadWriteLock
+
+### What is it?
+
+A ReadWriteLock maintains a pair of associated locks,
+one for read-only operations and one for writing.
+The read lock may be held simultaneously by multiple reader threads,
+so long as there are no writers. The write lock is exclusive
+
