@@ -119,3 +119,22 @@ class Handler implements Runnable {
 }
 ```
 
+## Fork/Join
+
+### What
+
+an implementation of the ExecutorService interface that helps you take advantage of multiple processors.
+
+The fork/join framework distributes tasks to worker threads in a thread pool.
+
+### When
+
+
+
+### Why
+
+The fork/join framework is distinct because it uses a work-stealing algorithm.
+Worker threads that run out of things to do can steal tasks from other threads that are still busy.
+
+### How
+
