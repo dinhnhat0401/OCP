@@ -138,3 +138,12 @@ Worker threads that run out of things to do can steal tasks from other threads t
 
 ### How
 
+## Stream
+
+### What
+
+A sequence of elements supporting sequential and parallel aggregate operations. 
+
+### When
+### Why
+### How
