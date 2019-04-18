@@ -145,5 +145,11 @@ Worker threads that run out of things to do can steal tasks from other threads t
 A sequence of elements supporting sequential and parallel aggregate operations. 
 
 ### When
+
+Any stream operation in Java, unless explicitly specified as parallel, is processed sequentially.
+Parallel streams are designed for problems you can divide and conquer.
+
 ### Why
+
+parallel streams are implemented with Fork/Join tasks under the covers, so you’re essentially doing the same thing: that is, splitting up a problem into subtasks that can be executed on separate threads and then joining them back together to produce a result.
 ### How
