@@ -14,6 +14,17 @@ Provide an application programming interface (API) that can access and manipulat
 
 * java.sql.Connection interface defines the contract for an object that represents the connection
 
+### JDBC URLs
+
+jdbc:<subprotocol>:<subname>
+
+subprotocol example:
+jdbc:derby
+jdbc:mysql
+jdbc:oracle
+
+jdbc:mysql://localhost:3306/mydb
+
 ### Statement
 
 * Provides an abstraction of the functionality needed to get a SQL statement to execute on a database.
