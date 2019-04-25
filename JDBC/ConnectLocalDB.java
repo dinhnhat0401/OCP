@@ -19,9 +19,16 @@ public class ConnectLocalDB {
       String query = "SELECT * FROM candidate_users LIMIT 20";
       ResultSet rs = stmt.executeQuery(query);
       while (rs.next()) {
+        // Get values by field name
         System.out.print(rs.getInt("id") + "  ");
         System.out.print(rs.getString("email") + "  ");
         System.out.println(rs.getString("username"));
+
+        // Get values by column indexes
+        // Remember: Column indexes start with 1.
+        System.out.print(rs.getInt(1) + "  ");
+        System.out.print(rs.getString(2) + "  ");
+        System.out.println(rs.getString(14) + "  ");
       }
     } catch (SQLException se) { 
       System.out.println(se.getMessage());
