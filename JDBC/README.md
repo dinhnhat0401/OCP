@@ -80,3 +80,16 @@ public ResultSet executeQuery(String sql) throws SQLException
 
 
 ## Submit Queries and Read Result from DB
+
+### ResultSet cursor types
+
+1. TYPE_FORWARD_ONLY: default value for a ResultSet
+2. TYPE_SCROLL_INSENSITIVE: A cursor position can be moved in the result forward or backward, or positioned to a particular cursor location.
+3. TYPE_SCROLL_SENSITIVE: A cursor can be moved in the results forward or backward, or positioned to a particular cursor location. Any changes made to the underlying data are reflected in the open result set. Not implemented in a database or JDBC driver very often.
+
+### Data concurrency with resultset
+
+1. CONCUR_READ_ONLY: default value for result set concurrency. Any open result set is read-only and cannot be modified or changed.
+2. CONCUR_UPDATABLE: A result set can be modified through the ResultSet methods while the result set is open.
+
+
