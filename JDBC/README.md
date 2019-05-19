@@ -32,12 +32,15 @@ java.lang.ClassNotFoundException: com.mysql.jdbc:Driver
 ```
 
 + To set up the CLASSPATH
+
+```
 Method 1:
 export CLASSPATH=".:mysql-connector-java-8.0.15.jar"
 java MyClassFile
 
 Method 2:
 java -cp .:mysql-connector-java-8.0.15.jar MyClassFile
+```
 
 #### DriverManager
 
