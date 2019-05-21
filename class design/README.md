@@ -20,3 +20,6 @@ Note: we can use lazy initialization (= delay the creation of an object until th
 |-|-|-|
 |instantiation|use a static method (e.g: getInstance), a singleton class doesn't have public constructor| use public constructor|
 
+## Immutable class
+
+An immutable class must not allow the state to change
