@@ -23,3 +23,9 @@ Note: we can use lazy initialization (= delay the creation of an object until th
 ## Immutable class
 
 An immutable class must not allow the state to change
+
+## Encapsulation
+
+### Why Encapsulation?
+
+### How?
