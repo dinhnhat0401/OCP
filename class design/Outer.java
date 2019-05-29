@@ -28,6 +28,16 @@ public class Outer {
 
     // instantiate a new local class 
     MethodInner methodInner = new MethodInner();
+  }  
+  public void print(int x) {
+    class Inner {
+      public void getX() {
+        // Outer.java:37: error: local variables referenced from an inner class must be final or effectively final
+        // System.out.println(++x);
+      }
+    }
+    Inner inner = new Inner();
+    inner.getX();
   } 
 }
 
