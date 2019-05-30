@@ -70,6 +70,7 @@ jdbc:mysql://localhost:3306/mydb
 
 ### ResultSet Interfaces
 
+* When a statement object is closed, its current ResultSet object is also closed if exist.
 * An abstraction functionality needed to process a result set that is returned from the SQL query.
 
 example:
