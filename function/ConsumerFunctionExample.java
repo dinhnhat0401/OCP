@@ -3,11 +3,19 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
+import java.util.Random;
 
 public class ConsumerFunctionExample {
   public static void main(String [] args) {
     Consumer<Integer> consumer = i -> { System.out.println("consumer print"); };
-    List<Integer> list = Arrays.asList(new Integer(12), new Integer(1), new Integer(2), new Integer(4), new Integer(9));
+    
+    Supplier<Integer> supplier = () -> {
+      Random r = new Random();
+      return r.nextInt(40) + 1;
+    }; 
+   
+    List<Integer> list = Arrays.asList(supplier.get(), supplier.get(), new Integer(2), new Integer(4), new Integer(9));
     printList(list, consumer);
 
     Predicate<Integer> p = (i) -> {
