@@ -5,10 +5,11 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.Random;
+import java.util.stream.IntStream;
 
 public class ConsumerFunctionExample {
   public static void main(String [] args) {
-    Consumer<Integer> consumer = i -> { System.out.println("consumer print"); };
+    Consumer<Integer> consumer = i -> { System.out.println(" " + i); };
     
     Supplier<Integer> supplier = () -> {
       Random r = new Random();
@@ -16,7 +17,11 @@ public class ConsumerFunctionExample {
     }; 
    
     List<Integer> list = Arrays.asList(supplier.get(), supplier.get(), new Integer(2), new Integer(4), new Integer(9));
-    printList(list, consumer);
+    List<Integer> list1 = Arrays.asList(supplier.get());
+    
+    System.out.println("sum = " + list1.stream().map(i -> i.intValue()).reduce(10, (i, j) -> i + j));
+
+    printList(list1, consumer);
 
     Predicate<Integer> p = (i) -> {
       System.out.println("evaluated i = " + i);
