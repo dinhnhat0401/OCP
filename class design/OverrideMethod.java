@@ -5,6 +5,7 @@ interface Printer1 {
 }
 
 interface Printer2 {
+  // static methods cannot be overriden
   public static void print() {
     System.out.println("Printer2");
   }
