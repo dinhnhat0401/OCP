@@ -1,5 +1,7 @@
-abstract class Animal {
-  abstract void eat();
+class Animal {
+  void eat() {
+    System.out.println("Animal eats.");
+  }
 }
 
 class Dog extends Animal {
@@ -16,14 +18,20 @@ class Cat extends Animal {
 
 public class ArrayStoreExceptionTest {
   public static void main(String[] args) {
-    //Animal [] animals = new Dog[2];
-    //animals[0] = new Dog();
+    Animal [] animals = new Dog[3];
+    animals[0] = new Dog();
     // This will cause: Exception in thread "main" java.lang.ArrayStoreException: Cat at ArrayStoreExceptionTest.main(ArrayStoreExceptionTest.java:21)
-    //animals[1] = new Cat();
+    animals[1] = new Cat();
+    animals[2] = new Animal();
 
-    //animals[0].eat();
-    //animals[1].eat();
-    
+
+    // This will cause classCastException
+    animals[3] = (Dog)new Animal();
+
+    animals[0].eat();
+    animals[1].eat();
+    animals[2].eat();
+
     //Double [] doubleArray = new Double[2];
     //doubleArray[0] = new Double(2);
     // ArrayStoreExceptionTest.java:28: error: incompatible types: Integer cannot be converted to Double
