@@ -1,6 +1,8 @@
 public class Outer {
   class Inner {
-    
+    public static void m1() {
+      System.out.println("Bar: m1()");
+    }    
   }
 
   static class StaticInner {
